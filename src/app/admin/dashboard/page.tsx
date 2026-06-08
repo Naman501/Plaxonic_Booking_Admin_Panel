@@ -78,7 +78,7 @@ const [rejectReason, setRejectReason] = useState("");
   const fetchBookings = async () => {
     try {
       setLoadingBookings(true);
-      const res = await api.get("/admin/bookings");
+      const res = await api.get("/admin/bookings", { withCredentials: true });
       setBookings(res.data.bookings);
     } catch (error) {
       console.log(error);
@@ -91,7 +91,7 @@ const [rejectReason, setRejectReason] = useState("");
   const fetchRooms = async () => {
     try {
       setLoadingRooms(true);
-      const res = await api.get("/rooms");
+      const res = await api.get("/rooms", { withCredentials: true });
       setRooms(res.data.rooms);
     } catch (error) {
       console.log(error);
